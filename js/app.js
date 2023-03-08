@@ -32,7 +32,7 @@ const apps = {
     // const message = document.querySelector('.message');
     // message.innerText = "Redirect to application" + setID;
 
-    var appUrl =  "com.flashmemory://sharing?folderID=" + setID;
+    var appUrl =  "com.flashmemory://sharing?setID=" + setID;
     window.location = appUrl;
 
     timeout = setTimeout(function(){
