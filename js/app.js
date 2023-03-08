@@ -18,18 +18,18 @@ const apps = {
     // setTimeout(function () { window.location = "http://itunes.apple.com/app/id1485265975"; }, 25);
 
     const params = new URLSearchParams(window.location.search)
-    print("text")
-    print(params)
+    // print("text")
+    // print(params)
     let setID = params.get("setID");
 
-    // const message = document.querySelector('.message');
-    // message.innerText = setID;
+    const message = document.querySelector('.message');
+    message.innerText = setID;
 
     // console.log('params');
     // console.log(params);
 
     // let folderID = params.get("folderID").toString()
-    window.location = "com.flashmemory://sharing?folderID=" + setID
+    // window.location = "com.flashmemory://sharing?folderID=" + setID
     // } else {
     //   const message = document.querySelector('.message');
     //   message.innerText = 'Oh, no! Open link on your iPhone';
