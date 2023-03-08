@@ -13,18 +13,27 @@ const apps = {
   
   const redirect = () => {
     let os = platform();
-    if (os in apps) {
+    // if (os in apps) {
     //   location.replace(apps[os]);
-    setTimeout(function () { window.location = "http://itunes.apple.com/app/id1485265975"; }, 25);
+    // setTimeout(function () { window.location = "http://itunes.apple.com/app/id1485265975"; }, 25);
 
     const params = new URLSearchParams(window.location.search)
+    print("text")
     print(params)
-    let folderID = params.get("folderID").toString()
-    window.location = "com.flashmemory://sharing?folderID=" + folderID
-    } else {
-      const message = document.querySelector('.message');
-      message.innerText = 'Oh, no! Open link on your iPhone';
-    }
+    let setID = params.get("setID");
+
+    // const message = document.querySelector('.message');
+    // message.innerText = setID;
+
+    // console.log('params');
+    // console.log(params);
+
+    // let folderID = params.get("folderID").toString()
+    window.location = "com.flashmemory://sharing?folderID=" + setID
+    // } else {
+    //   const message = document.querySelector('.message');
+    //   message.innerText = 'Oh, no! Open link on your iPhone';
+    // }
   };
   
   redirect();
@@ -39,3 +48,73 @@ const apps = {
 // }
 
 // addOrUpdateURLParam("name", "Jane")
+
+
+
+/*
+
+let routes = {};
+let templates = {};
+
+let app_div = document.getElementById('app');
+
+function home() {
+    let div = document.createElement('div');
+    let link = document.createElement('a');
+    link.href = '#/about';
+    link.innerText = 'About';
+
+    div.innerHTML = '<h1>Home</h1>';
+    div.appendChild(link);
+
+    app_div.appendChild(div);
+};
+
+function about() {
+    let div = document.createElement('div');
+    let link = document.createElement('a');
+    link.href = '#/';
+    link.innerText = 'Home';
+
+    div.innerHTML = '<h1>About</h1>';
+    div.appendChild(link);
+
+    app_div.appendChild(div);
+};
+
+function route (path, template) {
+  if (typeof template === 'function') {
+      return routes[path] = template;
+  }
+  else if (typeof template === 'string') {
+      return routes[path] = templates[template];
+  } else {
+      return;
+  };
+};
+
+function template (name, templateFunction) {
+  return templates[name] = templateFunction;
+};
+
+template('home', function(){
+  home();
+});
+
+template('about', function(){
+  about();
+});
+
+route('/', 'home');
+route('/about', 'about');
+
+function router(evt) {
+  let url = window.location.hash.slice(1) || '/';
+  let route = resolveRoute(url);
+
+  route();
+};
+
+window.addEventListener('load', router);
+window.addEventListener('hashchange', router);
+*/
