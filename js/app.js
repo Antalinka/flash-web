@@ -13,7 +13,7 @@ const apps = {
   
   const redirect = () => {
     let os = platform();
-    // if (os in apps) {
+    if (os in apps) {
     //   location.replace(apps[os]);
     // setTimeout(function () { window.location = "http://itunes.apple.com/app/id1485265975"; }, 25);
 
@@ -29,11 +29,11 @@ const apps = {
     // console.log(params);
 
     // let folderID = params.get("folderID").toString()
-    // window.location = "com.flashmemory://sharing?folderID=" + setID
-    // } else {
-    //   const message = document.querySelector('.message');
-    //   message.innerText = 'Oh, no! Open link on your iPhone';
-    // }
+    window.location = "com.flashmemory://sharing?folderID=" + setID
+    } else {
+      const message = document.querySelector('.message');
+      message.innerText = 'Oh, no! Open link on your iPhone';
+    }
   };
   
   redirect();
